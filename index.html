@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhtasim Ibteda Shochcho - AI Engineer & Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                    },
+                    colors: {
+                        'light-primary': '#0F3E2A',
+                        'light-accent': '#145B5E',
+                        'dark-primary': '#D0F5E1',
+                        'dark-accent': '#00FF84',
+                        'dark-card': '#1A1A1A'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'bounce-slow': 'bounce 2s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-black text-light-primary dark:text-dark-primary font-sans transition-colors duration-500">
+    
+    <div class="min-h-screen flex flex-col lg:flex-row">
+        <!-- Mobile Header -->
+        <header class="lg:hidden bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 p-4">
+            <div class="flex items-center justify-between">
+                <button id="mobileMenuToggle" class="w-10 h-10 rounded-full bg-light-accent dark:bg-dark-accent text-white dark:text-black flex items-center justify-center transition-all duration-300 hover:scale-110">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Theme Toggle - Mobile -->
+                <button id="themeToggleMobile" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-light-accent dark:bg-dark-accent text-white dark:text-black flex justify-center items-center hover:bg-green-600 transition duration-300 ease-in-out shadow-lg">
+                    <i class="fas fa-sun dark:hidden"></i>
+                    <i class="fas fa-moon hidden dark:block"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-full lg:w-80 xl:w-96 bg-gray-50 dark:bg-dark-card lg:min-h-screen transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed lg:sticky top-0 z-40">
+            <div class="p-8 lg:p-10 flex flex-col items-center gap-4 lg:space-y-8 h-full">
+                <!-- Theme Toggle - Desktop -->
+                <div class="hidden lg:flex justify-end">
+                    <button id="themeToggleDesktop" class="absolute top-4 right-4 w-12 h-12 rounded-full bg-light-accent dark:bg-dark-accent text-white dark:text-black flex justify-center items-center hover:bg-green-600 transition duration-300 ease-in-out shadow-lg">
+                        <i class="fas fa-sun dark:hidden text-lg"></i>
+                        <i class="fas fa-moon hidden dark:block text-lg"></i>
+                    </button>
+                </div>
+                
+                <!-- Profile Section -->
+                <div class="text-center space-y-6">
+                    <!-- Profile Image -->
+                    <div class="w-32 h-32 mx-auto rounded-xl bg-gradient-to-br from-light-accent to-light-primary dark:from-dark-accent dark:to-green-400 p-1 shadow-lg">
+                        <img src="profile_pic.jpg" alt="Muhtasim Ibteda Shochcho" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    
+                    <!-- Name & Title -->
+                    <div>
+                        <h1 class="text-2xl lg:text-3xl font-bold text-light-accent dark:text-dark-accent mb-2 leading-tight">Muhtasim Ibteda Shochcho</h1>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 font-medium">AI-Driven Software Engineer & Researcher</p>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-light-accent dark:text-dark-accent"></i>
+                        </div>
+                        <span class="text-sm font-medium">sho25100@gmail.com</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-light-accent dark:text-dark-accent"></i>
+                        </div>
+                        <span class="text-sm font-medium">Dhaka, Bangladesh</span>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-4">
+                    <a href="https://www.linkedin.com/in/mtibteda" target="_blank" class="w-12 h-12 rounded-full bg-light-accent dark:bg-dark-accent text-white dark:text-black flex items-center justify-center hover:scale-110 hover:shadow-lg transition-all duration-300">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="mailto:sho25100@gmail.com" class="w-12 h-12 rounded-full bg-light-accent dark:bg-dark-accent text-white dark:text-black flex items-center justify-center hover:scale-110 hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-light-accent dark:bg-dark-accent text-white dark:text-black flex items-center justify-center hover:scale-110 hover:shadow-lg transition-all duration-300">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                </div>
+
+                <!-- Resume Button -->
+                <button class="w-full py-4 px-6 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-xl font-semibold hover:scale-105 hover:shadow-lg transition-transform duration-300">
+                    <i class="fas fa-download mr-3"></i>
+                    Download Resume
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-0">
+            <!-- Navigation -->
+            <nav class="sticky top-0 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 z-30 backdrop-blur-sm">
+                <div class="max-w-6xl mx-auto px-6 py-6">
+                    <ul class="flex justify-center space-x-8 md:space-x-12 text-sm font-semibold">
+                        <li><a href="#home" class="nav-link px-4 py-2 rounded-lg bg-light-accent dark:bg-dark-accent text-white dark:text-black transition-all duration-300">HOME</a></li>
+                        <li><a href="#resume" class="nav-link px-4 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-light-accent/10 dark:hover:bg-dark-accent/20 hover:text-light-accent dark:hover:text-dark-accent transition-all duration-300">RESUME</a></li>
+                        <li><a href="#work" class="nav-link px-4 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-light-accent/10 dark:hover:bg-dark-accent/20 hover:text-light-accent dark:hover:text-dark-accent transition-all duration-300">WORK</a></li>
+                        <li><a href="#contact" class="nav-link px-4 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-light-accent/10 dark:hover:bg-dark-accent/20 hover:text-light-accent dark:hover:text-dark-accent transition-all duration-300">CONTACT</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Content Sections -->
+            <div class="max-w-screen-lg mx-auto px-4 md:px-8 py-12 space-y-6">
+                <!-- Home Section -->
+                <section id="home" class="section">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-light-accent dark:text-dark-accent mb-8">ABOUT ME</h2>
+                    </div>
+                    
+                    <div class="max-w-4xl mx-auto space-y-12">
+                        <div class="text-center">
+                            <p class="text-xl leading-relaxed mb-8 font-medium text-gray-700 dark:text-gray-300">
+                                Hi, I'm <strong class="text-light-accent dark:text-dark-accent">Muhtasim Ibteda Shochcho</strong> — a CSE graduate passionate about building <strong class="text-light-accent dark:text-dark-accent">AI-powered software</strong>, from <strong class="text-light-accent dark:text-dark-accent">edtech platforms</strong> and <strong class="text-light-accent dark:text-dark-accent">financing mobile apps</strong> to <strong class="text-light-accent dark:text-dark-accent">enterprise compliance dashboards</strong> and <strong class="text-light-accent dark:text-dark-accent">multimodal document understanding systems</strong>.
+                            </p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mb-16">
+                            <div class="bg-gray-50 dark:bg-dark-card p-8 rounded-lg shadow-md text-center">
+                                <h3 class="text-xl font-bold text-light-accent dark:text-dark-accent mb-4 leading-6">🚀 Why Me?</h3>
+                                <ul class="flex flex-col gap-y-3 text-left pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Published at <strong class="text-light-accent dark:text-dark-accent">ACM CHI 2025</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Built real-world projects at <strong class="text-light-accent dark:text-dark-accent">Bangladesh Finance PLC</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Expertise in <strong class="text-light-accent dark:text-dark-accent">FastAPI, Flutter, LangChain, AI/ML</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Hands-on with <strong class="text-light-accent dark:text-dark-accent">RAG pipelines & LLM fine-tuning</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 dark:bg-dark-card p-8 rounded-lg shadow-md text-center">
+                                <h3 class="text-xl font-bold text-light-accent dark:text-dark-accent mb-4 leading-6">🧠 My Mission</h3>
+                                <p class="text-left leading-relaxed">
+                                    I bridge <strong class="text-light-accent dark:text-dark-accent">research</strong> and <strong class="text-light-accent dark:text-dark-accent">real-world applications</strong> by combining intelligent automation, backend performance, and human-centered design.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- What I Do Section -->
+                        <div>
+                            <div class="text-center mb-12">
+                                <h3 class="text-3xl font-bold text-light-accent dark:text-dark-accent">WHAT I DO</h3>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <!-- Web Development Card -->
+                                <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                                    <div class="flex items-start space-x-6">
+                                        <div class="w-16 h-16 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                            <i class="fas fa-code text-2xl text-light-accent dark:text-dark-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold mb-3 leading-6">Web Development</h4>
+                                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                                FastAPI backends, React.js frontends, and full-stack solutions with modern frameworks and best practices.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- App Development Card -->
+                                <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                                    <div class="flex items-start space-x-6">
+                                        <div class="w-16 h-16 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                            <i class="fas fa-mobile-alt text-2xl text-light-accent dark:text-dark-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold mb-3 leading-6">App Development</h4>
+                                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                                Flutter mobile applications with ML integration, camera features, and seamless user experiences.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AI/ML Card -->
+                                <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                                    <div class="flex items-start space-x-6">
+                                        <div class="w-16 h-16 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                            <i class="fas fa-brain text-2xl text-light-accent dark:text-dark-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold mb-3 leading-6">AI/ML Engineering</h4>
+                                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                                LLM fine-tuning, RAG pipelines, computer vision, and multimodal AI systems for real-world applications.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Research Card -->
+                                <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                                    <div class="flex items-start space-x-6">
+                                        <div class="w-16 h-16 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                            <i class="fas fa-microscope text-2xl text-light-accent dark:text-dark-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-semibold mb-3 leading-6">Research</h4>
+                                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                                Academic research in HCI, intelligent tutoring systems, and AI-powered educational technologies.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resume Section -->
+                <section id="resume" class="section hidden">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-light-accent dark:text-dark-accent">RESUME</h2>
+                    </div>
+                    
+                    <div class="max-w-5xl mx-auto space-y-16">
+                        <!-- Experience -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-10 text-light-accent dark:text-dark-accent text-center">💼 EXPERIENCE</h3>
+                            <div class="flex flex-col gap-y-3">
+                                <!-- Research Intern -->
+                                <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                                    <h4 class="text-xl font-semibold mb-2 text-light-accent dark:text-dark-accent leading-6">🧠 Research Intern</h4>
+                                    <p class="font-medium mb-2 leading-relaxed">Center for Computational & Data Sciences (IUB)</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">📍 Dhaka | 🗓️ Dec 2024 – Present</p>
+                                    <ul class="text-sm text-gray-700 dark:text-gray-300 pl-4">
+                                        <li class="flex items-start gap-2 mb-3">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Co-developed <strong class="text-light-accent dark:text-dark-accent">PACE</strong>, an AI-powered Python tutoring system used in classrooms</span>
+                                        </li>
+                                        <li class="flex items-start gap-2 mb-3">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Published at <strong class="text-light-accent dark:text-dark-accent">ACM CHI 2025</strong> for improving engagement through LLMs</span>
+                                        </li>
+                                        <li class="flex items-start gap-2 mb-3">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Conducted usability studies and led iterative design</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Working on <strong class="text-light-accent dark:text-dark-accent">multimodal document understanding</strong> using LayoutLMv3 + LLaMA</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Undergraduate Researcher -->
+                                <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                                    <h4 class="text-xl font-semibold mb-2 text-light-accent dark:text-dark-accent leading-6">🎓 Undergraduate Researcher</h4>
+                                    <p class="font-medium mb-2 leading-relaxed">CCDS, IUB</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">📍 Dhaka | 🗓️ Oct 2023 – Nov 2024</p>
+                                    <ul class="text-sm text-gray-700 dark:text-gray-300 pl-4">
+                                        <li class="flex items-start gap-2 mb-3">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Built and fine-tuned lightweight LLMs for educational use</span>
+                                        </li>
+                                        <li class="flex items-start gap-2 mb-3">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Participated in <strong class="text-light-accent dark:text-dark-accent">ACM SIGCHI Winter School</strong> for HCI</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Co-authored a survey on LLMs in Intelligent Tutoring Systems</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- IT Intern -->
+                                <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                                    <h4 class="text-xl font-semibold mb-2 text-light-accent dark:text-dark-accent leading-6">💼 IT Intern</h4>
+                                    <p class="font-medium mb-2 leading-relaxed">Bangladesh Finance PLC</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">📍 Dhaka, Bangladesh | 🗓️ Apr 27 – Jul 28, 2025</p>
+                                    <p class="font-medium mb-4 leading-relaxed">
+                                        <strong class="text-light-accent dark:text-dark-accent">Contributed to three major production-level systems</strong> in FinTech: 
+                                        🧾 Lead Management Backend, 📊 Audit Management System, and 📱 Flutter Mobile Application.
+                                    </p>
+                                    
+                                    <!-- Bangladesh Finance Mobile App -->
+                                    <div class="mb-6">
+                                        <h5 class="font-semibold mb-3 text-light-accent dark:text-dark-accent">🔐 Bangladesh Finance Mobile App</h5>
+                                        <ul class="text-sm text-gray-700 dark:text-gray-300 pl-4 space-y-2">
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed">Built a <strong class="text-light-accent dark:text-dark-accent">custom OCR scanner</strong> using Google ML Kit to extract NID details (name, DOB, ID number) from Bangladeshi national ID cards with bounding box alignment and text filtering</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed">Developed a robust <strong class="text-light-accent dark:text-dark-accent">face liveliness detection module</strong> using ML Kit to verify gestures (look left/right/up/down, eyes open) with auto-capture logic</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed">Integrated a <strong class="text-light-accent dark:text-dark-accent">cloth detection API</strong> (FastAPI + Groq LLaMA) to ensure identity compliance before face checks</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed">Implemented <strong class="text-light-accent dark:text-dark-accent">dynamic signature capture & storage</strong> with visual feedback and backend syncing</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Audit Management System -->
+                                    <div class="mb-6">
+                                        <h5 class="font-semibold mb-3 text-light-accent dark:text-dark-accent">🧾 Audit Management System</h5>
+                                        <ul class="text-sm text-gray-700 dark:text-gray-300 pl-4 space-y-2">
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed">Contributed to a <strong class="text-light-accent dark:text-dark-accent">React + FastAPI</strong> powered compliance dashboard</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed"><strong class="text-light-accent dark:text-dark-accent">Editable compliance tables</strong> per guideline section with real-time updates</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed"><strong class="text-light-accent dark:text-dark-accent">PDF file upload & view</strong> for audit evidence with secure storage</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed"><strong class="text-light-accent dark:text-dark-accent">Section-wise and chapter-wise analytics visualization</strong> using pie charts and gauges</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Lead Management Backend -->
+                                    <div>
+                                        <h5 class="font-semibold mb-3 text-light-accent dark:text-dark-accent">📋 Lead Management Backend</h5>
+                                        <ul class="text-sm text-gray-700 dark:text-gray-300 pl-4 space-y-2">
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed">Built secure backend APIs using <strong class="text-light-accent dark:text-dark-accent">FastAPI</strong> and <strong class="text-light-accent dark:text-dark-accent">MySQL</strong> with JWT-based authentication</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed"><strong class="text-light-accent dark:text-dark-accent">Email OTP verification</strong> tied to company ID autofill</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed"><strong class="text-light-accent dark:text-dark-accent">Geo-tagged lead entries</strong> (latitude, longitude, accuracy) with location tracking</span>
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                                <span class="leading-relaxed">Designed schema migrations using <strong class="text-light-accent dark:text-dark-accent">Alembic</strong> and ensured database integrity</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- ML Engineer -->
+                                <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                                    <h4 class="text-xl font-semibold mb-2 text-light-accent dark:text-dark-accent leading-6">🌍 Junior ML Engineer</h4>
+                                    <p class="font-medium mb-2 leading-relaxed">Omdena Liberia Local Chapter</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">🌐 Remote | 🗓️ Jan – May 2024</p>
+                                    <ul class="text-sm text-gray-700 dark:text-gray-300 pl-4">
+                                        <li class="flex items-start gap-2 mb-3">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Led malaria prediction model building (XGBoost + climate data)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2 mb-3">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Conducted EDA and visualized public health insights</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                            <span class="leading-relaxed">Collaborated with a global AI team on real-world impact</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skills -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-10 text-light-accent dark:text-dark-accent text-center">🛠️ SKILLS</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-semibold mb-4 text-light-accent dark:text-dark-accent">👨‍💻 Programming</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Python</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">JavaScript</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">C++</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Go</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">C#</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-semibold mb-4 text-light-accent dark:text-dark-accent">🌐 Web Development</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">FastAPI</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">React.js</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Tailwind CSS</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Node.js</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Express.js</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-semibold mb-4 text-light-accent dark:text-dark-accent">🧠 AI/ML</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Hugging Face</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">LangChain</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">PyTorch</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Scikit-learn</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Ollama</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-semibold mb-4 text-light-accent dark:text-dark-accent">🧾 Multimodal & NLP</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">LayoutLMv3</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">LLaMA</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">OCR processing</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">RAG pipelines</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-semibold mb-4 text-light-accent dark:text-dark-accent">🗃️ Databases</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">MySQL</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">PostgreSQL</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">MongoDB</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-semibold mb-4 text-light-accent dark:text-dark-accent">📱 Mobile App Dev</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Flutter</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-semibold mb-4 text-light-accent dark:text-dark-accent">🔧 Tools & DevOps</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Docker</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Git</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Linux</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Alembic</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Figma</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-semibold mb-4 text-light-accent dark:text-dark-accent">📊 Analytics</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Power BI</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Excel</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Matplotlib</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Pandas</span>
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium">Numpy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certifications -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-10 text-light-accent dark:text-dark-accent text-center">📜 CERTIFICATIONS</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="flex items-start gap-2">
+                                        <div class="w-12 h-12 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-brain text-light-accent dark:text-dark-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg leading-6">Machine Learning Specialization</h4>
+                                            <p class="text-light-accent dark:text-dark-accent font-medium">Coursera</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="flex items-start gap-2">
+                                        <div class="w-12 h-12 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-cube text-light-accent dark:text-dark-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg leading-6">Kubernetes, Docker Basics</h4>
+                                            <p class="text-light-accent dark:text-dark-accent font-medium">KodeKloud</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="flex items-start gap-2">
+                                        <div class="w-12 h-12 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0">
+                                            <i class="fab fa-linux text-light-accent dark:text-dark-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg leading-6">Linux Essentials</h4>
+                                            <p class="text-light-accent dark:text-dark-accent font-medium">KodeKloud</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-dark-card p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="flex items-start gap-2">
+                                        <div class="w-12 h-12 rounded-full bg-light-accent/10 dark:bg-dark-accent/20 flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-fire text-light-accent dark:text-dark-accent"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg leading-6">Deep Learning with PyTorch</h4>
+                                            <p class="text-light-accent dark:text-dark-accent font-medium">DataCamp</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Research -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-10 text-light-accent dark:text-dark-accent text-center">📄 RESEARCH</h3>
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                                <h4 class="text-xl font-semibold mb-4 text-light-accent dark:text-dark-accent">CHI 2025 – LLM-based AI Tutor</h4>
+                                <p class="text-lg italic mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    "Improving User Engagement and Learning Outcomes in LLM-Based Python Tutor: A Study of PACE"
+                                </p>
+                                <p class="mb-6 leading-relaxed">
+                                    Published in <strong class="text-light-accent dark:text-dark-accent">ACM CHI EA 2025</strong>, Yokohama, Japan. This research explored:
+                                </p>
+                                <ul class="space-y-3 pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Adaptive tutoring using fine-tuned lightweight LLMs</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Learning behavior analysis through surveys</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Real-world deployment in large classrooms</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Work Section -->
+                <section id="work" class="section hidden">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-light-accent dark:text-dark-accent">FEATURED PROJECTS</h2>
+                    </div>
+                    
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- PACE Project -->
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-xl font-semibold mb-3 text-light-accent dark:text-dark-accent">🎓 PACE – Python AI Companion</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">FastAPI, React.js, MySQL, Hugging Face, Ollama</p>
+                                <ul class="text-sm space-y-2 mb-6 pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">LLM-based tutoring platform</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Real-time feedback, XP gamification, test case evaluation</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Personalized student dashboard and class-wise analytics</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Published at <strong class="text-light-accent dark:text-dark-accent">ACM CHI 2025</strong></span>
+                                    </li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-full text-xs font-medium">Research</span>
+                                    <span class="text-xs text-gray-500">Private Academic Deployment</span>
+                                </div>
+                            </div>
+
+                            <!-- Bangladesh Finance App -->
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-xl font-semibold mb-3 text-light-accent dark:text-dark-accent">💼 Bangladesh Finance Mobile App</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">Flutter, ML Kit, FastAPI, Groq LLaMA</p>
+                                <ul class="text-sm space-y-2 mb-6 pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Contributed in eKYC feature integration of a financing App</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Implemented custom OCR using LLAMA Scout Multimodal and FastAPI</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Gesture-based face liveliness check</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Cloth detection using LLaMA before capturing</span>
+                                    </li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-full text-xs font-medium">FinTech</span>
+                                    <span class="text-xs text-gray-500">Production</span>
+                                </div>
+                            </div>
+
+                            <!-- Customer Support Chatbot -->
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-xl font-semibold mb-3 text-light-accent dark:text-dark-accent">🤖 Customer Support Q/A Chatbot</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">LangChain, Gemini API, FastAPI</p>
+                                <ul class="text-sm space-y-2 mb-6 pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">RAG-based question answering on official financial queries</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">FastAPI-based backend with chunked document retrieval</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Gemini API for natural response generation with source referencing</span>
+                                    </li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-full text-xs font-medium">AI Chatbot</span>
+                                    <span class="text-xs text-gray-500">Bangladesh Finance</span>
+                                </div>
+                            </div>
+
+                            <!-- Audit Management System -->
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-xl font-semibold mb-3 text-light-accent dark:text-dark-accent">📋 Audit Management System</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">FastAPI, React, MySQL, Ant Design</p>
+                                <ul class="text-sm space-y-2 mb-6 pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Chapter-wise compliance tracker</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Real-time editable table with file upload</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Analytics dashboard: pie charts, bar charts, gauges</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">User-specific audit records and Excel export</span>
+                                    </li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-full text-xs font-medium">Enterprise</span>
+                                    <span class="text-xs text-gray-500">Internal Tool</span>
+                                </div>
+                            </div>
+
+                            <!-- CRM Lead Management Backend -->
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-xl font-semibold mb-3 text-light-accent dark:text-dark-accent">🧾 Lead Management Backend</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">FastAPI, JWT, MySQL, Alembic</p>
+                                <ul class="text-sm space-y-2 mb-6 pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Email OTP verification, role-based access (Admin/Manager/Employee)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Lead notes, geo-tagging, file uploads</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Audit logs, user activity tracking</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Designed for dynamic lead workflows</span>
+                                    </li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-full text-xs font-medium">Backend</span>
+                                    <span class="text-xs text-gray-500">LMS System</span>
+                                </div>
+                            </div>
+
+                            <!-- AI Malaria Prediction -->
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-xl font-semibold mb-3 text-light-accent dark:text-dark-accent">🦟 AI Malaria Prediction App</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">XGBoost, Pandas, Streamlit</p>
+                                <ul class="text-sm space-y-2 mb-6 pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Predicts malaria risk from climate + demographic data</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Ensemble learning (bagging & boosting)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Deployed dashboard for health workers</span>
+                                    </li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-full text-xs font-medium">Health AI</span>
+                                    <a href="https://malaria-prediction.streamlit.app/" target="_blank" class="text-xs text-light-accent dark:text-dark-accent hover:underline">Live Demo →</a>
+                                </div>
+                            </div>
+
+                            <!-- EZZ Gaming Hub -->
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-lg shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-xl font-semibold mb-3 text-light-accent dark:text-dark-accent">🎮 EZZ Gaming Hub</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">PHP, MySQL, Bootstrap</p>
+                                <ul class="text-sm space-y-2 mb-6 pl-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Responsive gaming product store</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">User-friendly UI with dynamic content</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-light-accent dark:text-dark-accent mr-2 mt-1">•</span>
+                                        <span class="leading-relaxed">Custom cart and checkout flow</span>
+                                    </li>
+                                </ul>
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-full text-xs font-medium">E-Commerce</span>
+                                    <a href="https://github.com/Geeky-Muhtasim/EZZ-GAMING-HUB" target="_blank" class="text-xs text-light-accent dark:text-dark-accent hover:underline">GitHub Repo →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="section hidden">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-light-accent dark:text-dark-accent">LET'S BUILD TOGETHER!</h2>
+                    </div>
+                    
+                    <div class="max-w-5xl mx-auto">
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <div class="space-y-8">
+                                <p class="text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+                                    Looking for a developer who combines AI, research, and backend systems? Whether you're scaling education, improving compliance, or automating workflows, I build systems that work at scale.
+                                </p>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex items-center space-x-5">
+                                        <div class="w-14 h-14 bg-light-accent dark:bg-dark-accent rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                                            <i class="fas fa-envelope text-white dark:text-black text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-lg">Email</p>
+                                            <a href="mailto:sho25100@gmail.com" class="text-light-accent dark:text-dark-accent hover:underline font-medium">sho25100@gmail.com</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center space-x-5">
+                                        <div class="w-14 h-14 bg-light-accent dark:bg-dark-accent rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                                            <i class="fab fa-linkedin text-white dark:text-black text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-lg">LinkedIn</p>
+                                            <a href="https://www.linkedin.com/in/mtibteda" target="_blank" class="text-light-accent dark:text-dark-accent hover:underline font-medium">linkedin.com/in/mtibteda</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center space-x-5">
+                                        <div class="w-14 h-14 bg-light-accent dark:bg-dark-accent rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                                            <i class="fas fa-map-marker-alt text-white dark:text-black text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-lg">Location</p>
+                                            <p class="text-gray-600 dark:text-gray-300 font-medium">Dhaka, Bangladesh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-xl font-semibold mb-6 text-light-accent dark:text-dark-accent">Send me a message</h3>
+                                <form class="space-y-6">
+                                    <div>
+                                        <input type="text" placeholder="Your Name" class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent focus:border-transparent transition-all duration-300">
+                                    </div>
+                                    <div>
+                                        <input type="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent focus:border-transparent transition-all duration-300">
+                                    </div>
+                                    <div>
+                                        <textarea rows="5" placeholder="Your Message" class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent focus:border-transparent resize-none transition-all duration-300"></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full py-4 bg-light-accent dark:bg-dark-accent text-white dark:text-black rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                        <i class="fas fa-paper-plane mr-3"></i>
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggleDesktop = document.getElementById('themeToggleDesktop');
+        const themeToggleMobile = document.getElementById('themeToggleMobile');
+        const html = document.documentElement;
+
+        // Check for saved theme or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        themeToggleDesktop.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMobileMenu() {
+            const isOpen = !sidebar.classList.contains('-translate-x-full');
+            
+            if (isOpen) {
+                sidebar.classList.add('-translate-x-full');
+                mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+                mobileOverlay.classList.remove('opacity-100');
+            } else {
+                sidebar.classList.remove('-translate-x-full');
+                mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                mobileOverlay.classList.add('opacity-100');
+            }
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        // Navigation Functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show target section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                }
+                
+                // Update active nav state
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove('bg-light-accent', 'dark:bg-dark-accent', 'text-white', 'dark:text-black');
+                    navLink.classList.add('text-gray-600', 'dark:text-gray-300');
+                });
+                
+                link.classList.remove('text-gray-600', 'dark:text-gray-300');
+                link.classList.add('bg-light-accent', 'dark:bg-dark-accent', 'text-white', 'dark:text-black');
+                
+                // Close mobile menu
+                if (window.innerWidth < 1024) {
+                    toggleMobileMenu();
+                }
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Smooth scroll animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('[class*="animate-"]');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                sidebar.classList.remove('-translate-x-full');
+                mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+        
+        // Initialize
+        animateOnScroll();
+    </script>
+</body>
+</html> 
